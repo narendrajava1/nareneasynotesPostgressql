@@ -38,7 +38,6 @@ public class Note {
 
 	@NotBlank
 	private String title;
-	@LastModifiedDate
 	@UpdateTimestamp
 	@Column(nullable = false, columnDefinition = "DATETIME(3) DEFAULT CURRENT_TIMESTAMP(3)", insertable = false, updatable = true)
 	private Date updatedAt;
