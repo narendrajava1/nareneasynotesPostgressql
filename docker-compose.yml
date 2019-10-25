@@ -15,8 +15,6 @@ services:
     container_name: docker-mysql
     volumes:
     - /my/own/datadir:/var/lib/mysql
-    ports:
-      - 3306:3306
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=notes_app
