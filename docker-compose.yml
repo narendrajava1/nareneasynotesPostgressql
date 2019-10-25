@@ -1,11 +1,22 @@
 version: '3'
 
 services: 
+  nginx:
+    image: nginx:1.13
+    container_name: easy-nginx
+    restart: always
+    ports:
+    - 80:80
+    - 443:443
+    volumes:
+    - ./nginx/conf.d:/etc/nginx/conf.d    
   docker-mysql:
     image: mysql:latest
     container_name: docker-mysql
     volumes:
     - /my/own/datadir:/var/lib/mysql
+    ports:
+      - 3306:3306
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=notes_app
@@ -17,7 +28,9 @@ services:
     image: easynotes
     container_name: easynotes_app
     depends_on:
+      - nginx
       - docker-mysql
+    restart: always
     ports:
       - 9696:9696
     environment:
