@@ -10,6 +10,7 @@ services:
     - 443:443
     volumes:
     - ./nginx/conf.d:/etc/nginx/conf.d
+    - ./whoops.html:/easynotes/whoops.html
     links:
       - spring-boot-easynotes-app
   docker-mysql:
