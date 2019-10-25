@@ -27,6 +27,9 @@ spring:
       
 server:
   port: 9696
+  servlet:
+    context-path: /easynotes
+
   
 
   
