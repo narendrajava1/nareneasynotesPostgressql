@@ -1,6 +1,18 @@
 version: '2'
 
 services:
+  nginx:
+    image: nginx:1.13
+    container_name: easy-nginx
+    restart: always
+    ports:
+    - 80:80
+    - 443:443
+    volumes:
+    - ../nginx/conf.d:/etc/nginx/conf.d
+    - ../whoops.html:/easynotes/whoops.html
+#     links:
+#       - spring-boot-easynotes-app
   docker-mysql:
     image: mysql:latest
     container_name: docker-mysql
@@ -14,9 +26,11 @@ services:
     image: naren576/easynotes
     container_name: easynotes_app
     depends_on:
+      - nginx
       - docker-mysql
     ports:
       - 9696:9696
+    restart: always
     environment:
       - DATABASE_HOST=docker-mysql
       - DATABASE_USER=root
