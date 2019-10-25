@@ -114,6 +114,7 @@ public class NoteController {
 
 		note.setTitle(noteDetails.getTitle());
 		note.setContent(noteDetails.getContent());
+		note.setCreatedAt(note.getCreatedAt());
 		final Note updatedNote = noteRepository.save(note);
 		response.setData(updatedNote);
 		return response;
