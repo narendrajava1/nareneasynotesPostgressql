@@ -28,7 +28,7 @@ services:
     image: easynotes
     container_name: easynotes_app
     depends_on:
-      - nginx
+#       - nginx
       - docker-mysql
     restart: always
     ports:
