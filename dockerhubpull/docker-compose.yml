@@ -11,8 +11,8 @@ services:
     volumes:
     - ./nginx/conf.d:/etc/nginx/conf.d
     - ./whoops.html:/easynotes/whoops.html
-    links:
-      - spring-boot-easynotes-app
+#     links:
+#       - spring-boot-easynotes-app
   docker-mysql:
     image: mysql:latest
     container_name: docker-mysql
@@ -26,6 +26,7 @@ services:
     image: naren576/easynotes
     container_name: easynotes_app
     depends_on:
+      - nginx
       - docker-mysql
     ports:
       - 9696:9696
