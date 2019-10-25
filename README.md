@@ -13,12 +13,12 @@ Docker CE
 
 Stack
 
-Docker
-Java
-Spring Boot
-MySQL
-NGINX
-Maven
+Docker,
+Java,
+Spring Boot,
+MySQL,
+NGINX,
+Maven.
 
 To Run the docker-compose you need to change directory to dockerhubpull then you can able find required docker-compose.yml
 
