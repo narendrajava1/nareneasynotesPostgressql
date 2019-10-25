@@ -1,6 +1,18 @@
 version: '2'
 
 services:
+  nginx:
+    image: nginx:1.13
+    container_name: easy-nginx
+    restart: always
+    ports:
+    - 80:80
+    - 443:443
+    volumes:
+    - ./nginx/conf.d:/etc/nginx/conf.d
+    - ./whoops.html:/easynotes/whoops.html
+    links:
+      - spring-boot-easynotes-app
   docker-mysql:
     image: mysql:latest
     container_name: docker-mysql
