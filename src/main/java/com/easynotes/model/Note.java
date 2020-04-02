@@ -26,8 +26,7 @@ allowGetters = true)
 public class Note {
 	@NotBlank
 	private String content;
-	@CreationTimestamp
-	@Column(nullable = false, columnDefinition = "DATETIME(3) DEFAULT CURRENT_TIMESTAMP(3)", insertable = false, updatable = false)
+	
 	private Date createdAt;
 
 	@Id
@@ -36,8 +35,7 @@ public class Note {
 
 	@NotBlank
 	private String title;
-	@UpdateTimestamp
-	@Column(nullable = false, columnDefinition = "DATETIME(3) DEFAULT CURRENT_TIMESTAMP(3)", insertable = false, updatable = true)
+	
 	private Date updatedAt;
 
 }

@@ -17,9 +17,9 @@ services:
     image: postgres:latest
     ports: 
     - "5432:5432"
-    container_name: docker-mysql
+    container_name: mypostgres
     volumes:
-     - db-data:/var/lib/postgresql/data/
+     - /db/data:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD=password
       - POSTGRES_USER=postgres
