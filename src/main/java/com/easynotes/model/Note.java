@@ -14,8 +14,6 @@ import javax.validation.constraints.NotBlank;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import org.springframework.data.annotation.LastModifiedDate;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Data;
